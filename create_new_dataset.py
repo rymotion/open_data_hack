@@ -6,6 +6,7 @@ from ckanapi import RemoteCKAN
 # Set user agent
 ua = 'ckanapiexample/1.0 (+http://example.com/my/website)'
 
+# Read data file to be uploaded
 with open(Path.cwd() / 'data' / 'MOCK_DATA.csv', 'rb') as data:
     mysite = RemoteCKAN('https://data.cityofdenton.com/', apikey='[INSERT API KEY HERE]', user_agent=ua)
 
