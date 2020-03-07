@@ -1,3 +1,9 @@
+"""
+Script to create a new dataset with a resource onto Denton's 
+Open Data portal
+"""
+
+
 from pathlib import Path
 
 from ckanapi import RemoteCKAN
