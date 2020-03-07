@@ -1,10 +1,20 @@
 import json
-import csv
 
-### [open] will open a *.csv file that will be broken down in this function to be written as a JSON encoded file
-with open('**/*.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile, delimiter='')
-    #TODO (rpaglinawan): Add table delimeter when parsing csv files
-    for row in reader:
-        print(', '.join(row))
-    #TODO (rpaglinawan): Add data delimeter to fill in table
+class BackendParser:
+    fileDirectory = ''
+    def __init__(self, fileLocation):
+        self.fileDirectory = fileLocation
+
+    def readJSON(self):
+        with open(self.fileDirectory, 'r') as jsonFile:
+            reader = json.load(jsonFile)
+            #TODO (rpaglinawan): Add data delimeter for json key
+            #TODO (rpaglinawan): Add data delimeter for json value
+            print(reader)
+            return reader
+
+    def encodeJSON(self, dataToWrite):
+        with open(self.fileDirectory, 'w') as jsonFile:
+            json.dump(dataToWrite, jsonFile, sort_keys=True)
+            print ("check if data was written")
+            pass
